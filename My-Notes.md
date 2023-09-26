@@ -1,5 +1,7 @@
-> docker-compose up --build 
+> docker-compose up
+> docker-compose up --build
 Not WORK
+Working after fix some Docker issues
 
 
 > docker-compose -f docker-compose.yml -f docker-compose.test.yml up

@@ -16,11 +16,12 @@ services:
         - ANOTEA_HOTJAR_ID=1234
 
   backend:
-    command: npm run start
-    volumes:
-      - ./backend:/opt/anotea/backend:ro
+    #command: npm run start
+    #volumes:
+    #  - ./backend:/opt/anotea/backend:ro
     environment:
       - ANOTEA_MONGODB_URI=mongodb://mongodb:27017/anotea?w=1
+      - ANOTEA_APP_PUBLIC_HOSTNAME=https://80-alldbg-anotea-wd0viww2oj4.ws-eu104.gitpod.io/
       - ANOTEA_SMTP_HOST=smtp
       - ANOTEA_SMTP_PORT=1025
       # Use Bunyan to sent logs to Fluentbit instead of Docker logging driver
@@ -85,7 +86,7 @@ services:
     environment:
       ES_JAVA_OPTS: "-Xmx256m -Xms256m"
     volumes:
-      - ./.data/elasticsearch:/usr/share/elasticsearch/data
+      - ./.data/elasticsearch:/var/lib/elasticsearch/data
 
   kibana:
     image: anotea_kibana
