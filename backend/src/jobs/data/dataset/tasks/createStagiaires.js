@@ -11,7 +11,7 @@ const createStagiaire = session => {
     let getDateInThePast = () => moment().subtract('100', 'days').toDate();
     let formation = session.formation;
 
-    let email = faker.internet.email();
+    let email = "poleyopmail@yopmail.com"; //faker.internet.email();
     return {
         token: randomize('token'),
         campaign: 'dataset',
